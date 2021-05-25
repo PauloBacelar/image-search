@@ -25,7 +25,7 @@ class Input extends React.Component {
           <i className="search icon"></i>
         </div>
 
-        <button class="ui button">Search</button>
+        <button className="ui button">Search</button>
       </div>
     );
   }
