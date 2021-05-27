@@ -1,12 +1,12 @@
 /* eslint-disable */
 import React from "react";
-import axios from "axios";
 import unsplash from "../api/unsplash";
+import ImageList from "./ImageList";
 
 class Input extends React.Component {
   constructor() {
     super();
-    this.state = { inputValue: "" };
+    this.state = { inputValue: "", images: [] };
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onButtonClick = this.onButtonClick.bind(this);
@@ -25,6 +25,8 @@ class Input extends React.Component {
         },
       }
     );
+
+    this.setState({ images: response.data.results });
   };
 
   render() {
@@ -46,6 +48,10 @@ class Input extends React.Component {
         >
           Search
         </button>
+
+        <div className="results">
+          <ImageList images={this.state.images} />;
+        </div>
       </div>
     );
   }
