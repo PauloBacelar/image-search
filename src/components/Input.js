@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from "react";
 import axios from "axios";
+import unsplash from "../api/unsplash";
 
 class Input extends React.Component {
   constructor() {
@@ -15,16 +16,16 @@ class Input extends React.Component {
     this.setState({ inputValue: event.target.value });
   }
 
-  onButtonClick(term) {
-    axios.get("https://api.unsplash.com/search/photos", {
-      params: {
-        query: term,
-      },
-      headers: {
-        Authorization: "Client-ID UqWCfpbYqWHntEJ6NPrHdlTLeslIWUmFryJK_cUaB3s",
-      },
-    });
-  }
+  onButtonClick = async (term) => {
+    const response = await unsplash.get(
+      "https://api.unsplash.com/search/photos",
+      {
+        params: {
+          query: term,
+        },
+      }
+    );
+  };
 
   render() {
     return (
