@@ -6,7 +6,8 @@ class Image extends React.Component {
   }
 
   render() {
-    return <h1>Hi!</h1>;
+    console.log(this.props);
+    return <img src={this.props.image.urls.regular} />;
   }
 }
 
