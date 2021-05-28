@@ -33,22 +33,24 @@ class Input extends React.Component {
   render() {
     return (
       <div>
-        <div className="ui large icon input">
-          <input
-            type="text"
-            placeholder="Search for images"
-            value={this.state.inputValue}
-            onChange={this.onInputChange}
-          />
-          <i className="search icon"></i>
-        </div>
+        <div className="user-input">
+          <div className="ui large icon input">
+            <input
+              type="text"
+              placeholder="Search for images"
+              value={this.state.inputValue}
+              onChange={this.onInputChange}
+            />
+            <i className="search icon"></i>
+          </div>
 
-        <button
-          className="ui button"
-          onClick={() => this.onButtonClick(this.state.inputValue)}
-        >
-          Search
-        </button>
+          <button
+            className="ui button"
+            onClick={() => this.onButtonClick(this.state.inputValue)}
+          >
+            Search
+          </button>
+        </div>
 
         <div className="results">
           {this.state.images.length > 0 ? (
