@@ -50,7 +50,9 @@ class Input extends React.Component {
         </button>
 
         <div className="results">
-          <ImageList images={this.state.images} />;
+          {this.state.images.length > 0 ? (
+            <ImageList images={this.state.images} />
+          ) : null}
         </div>
       </div>
     );
