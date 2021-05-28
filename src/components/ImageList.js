@@ -7,9 +7,13 @@ class ImageList extends React.Component {
   }
 
   render() {
-    return this.props.images.map((image) => {
-      return <Image className="image" image={image} key={image.id} />;
-    });
+    return (
+      <div className="grid-container">
+        {this.props.images.map((image) => {
+          return <Image className="image" image={image} key={image.id} />;
+        })}
+      </div>
+    );
   }
 }
 
