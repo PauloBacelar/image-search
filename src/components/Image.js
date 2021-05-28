@@ -12,6 +12,7 @@ class Image extends React.Component {
       <img
         src={this.props.image.urls.regular}
         alt={this.props.image.alt_description}
+        className="unique-image"
       />
     );
   }
