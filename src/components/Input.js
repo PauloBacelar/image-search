@@ -2,6 +2,7 @@
 import React from "react";
 import unsplash from "../api/unsplash";
 import ImageList from "./ImageList";
+import "../styles/Input.css";
 
 class Input extends React.Component {
   constructor() {
