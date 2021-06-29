@@ -1,20 +1,13 @@
-import React from "react";
+import "./ImageList.css";
 import Image from "./Image";
+import React from "react";
 
-class ImageList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const ImageList = (props) => {
+  const images = props.images.map((image) => {
+    return <Image key={image.id} image={image} />;
+  });
 
-  render() {
-    return (
-      <div className="grid-container">
-        {this.props.images.map((image) => {
-          return <Image className="image" image={image} key={image.id} />;
-        })}
-      </div>
-    );
-  }
-}
+  return <div className="image-list">{images}</div>;
+};
 
 export default ImageList;
